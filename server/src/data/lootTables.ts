@@ -1131,6 +1131,33 @@ export const LootTables: Record<ModeName, Record<string, LootTable>> = {
             { item: "as_val", weight: 0.1 },
             { item: "mk14", weight: 0.1 },
             { item: "ulr338", weight: 0.08 }
+        ],
+        melee_only: [
+            { item: "baseball_bat", weight: 1 },
+            { item: "hatchet", weight: 0.7 },
+            { item: "hatchet_bloodstained", weight: 0.7 },
+            { item: "fire_hatchet", weight: 0.3 },
+            { item: "crowbar", weight: 0.8 },
+            { item: "crowbar_rusted", weight: 0.8 },
+            { item: "crowbar_halloween", weight: 0.8 },
+            { item: "kbar", weight: 1 },
+            { item: "sickle", weight: 0.2 },
+            { item: "vaibhav_sickle", weight: 0.1 },
+            { item: "maul", weight: 0.05 },
+            { item: "steelfang", weight: 0.01 },
+            { item: "gas_can", weight: 0.1 },
+            { item: "heap_sword", weight: 0.001 },
+            { item: "ice_pick", weight: 0.05 },
+            { item: "seax", weight: 0.1 },
+            { item: "falchion", weight: 0.15 },
+            { item: "pan", weight: 0.05 },
+            { item: "kukri", weight: 0.05 },
+            { item: "pipe_wrench", weight: 0.35 },
+            { item: "hand_saw", weight: 0.1 },
+            { item: "tenon_saw", weight: 0.1 },
+            { item: "chainsaw", weight: 0.05 },
+            { item: "chainsaw_leatherfaced", weight: 0.05 },
+            { item: "scythe", weight: 0.1 }
         ]
     },
 

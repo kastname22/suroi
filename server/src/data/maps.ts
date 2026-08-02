@@ -12,7 +12,7 @@ import { Orientation } from "@common/typings";
 import { CircleHitbox } from "@common/utils/hitbox";
 import { Collision } from "@common/utils/math";
 import { DefinitionType, type ReferenceTo } from "@common/utils/objectDefinitions";
-import { random, randomFloat } from "@common/utils/random";
+import { pickRandomInArray, random, randomFloat } from "@common/utils/random";
 import { Vec, type Vector } from "@common/utils/vector";
 import { type GunItem } from "../inventory/gunItem";
 import { GameMap } from "../map";
@@ -21,7 +21,6 @@ import { GamePlugin } from "../pluginManager";
 import { getLootFromTable } from "../utils/lootHelpers";
 import { LootTables } from "./lootTables";
 import { ConfigSchema } from "../utils/config.d";
-import { memoryUsage } from "process";
 
 export interface RiverDefinition {
     readonly minAmount: number
@@ -1829,7 +1828,71 @@ const maps = {
         places: [
             { name: "pap's lonely place", position: Vec(0.5, 0.5) }
         ]
-    }
+    },
+    melee_madness: {
+        mode: "infection",
+        width: 384,
+        height: 384,
+        oceanSize: 16,
+        beachSize: 16,
+        buildings: {
+            small_bridge: Infinity,
+            lighthouse: 1,
+            small_bunker: 1,
+            [pickRandomInArray(["red_house", "green_house", "blue_house", "blue_house_special"])]: 1,
+            mobile_home: 1,
+            porta_potty: 2,
+            container_green_open1_damaged: 1,
+            container_blue_open1: 1,
+            container_blue_open2: 1,
+            container_blue_open2_damaged: 1,
+            container_yellow_open2: 1,
+            memorial: 1
+        },
+        quadBuildingLimit: {
+            warehouse: 2,
+            mobile_home: 2,
+            porta_potty: 2,
+            red_house: 2,
+            red_house_v2: 2,
+            green_house: 2,
+            blue_house: 2,
+            blue_house_special: 1,
+        },
+        obstacles: {
+            oak_tree: 30,
+            birch_tree: 3,
+            pine_tree: 1,
+            loot_tree: 1,
+            oil_tank: 2,
+            baby_plumpkin_infection: 50,
+            melee_crate: 25,
+            rock: 20,
+            bush: 20,
+            regular_crate: 10,
+            grenade_crate: 3,
+            flint_crate: 1,
+            aegis_crate: 1,
+            blueberry_bush: 3,
+            barrel: 15,
+            viking_chest: 1,
+            super_barrel: 3,
+            gold_rock: 1,
+            loot_barrel: 1,
+            flint_lockbox: 1
+        },
+        loots: {
+            ground_loot: 60
+        },
+        places: [
+            { name: "Blightnana", position: Vec(0.23, 0.2) },
+            { name: "Quarantine", position: Vec(0.23, 0.8) },
+            { name: "Rotlandet", position: Vec(0.75, 0.2) },
+            { name: "Pathogen Narrows", position: Vec(0.72, 0.8) },
+            { name: "Mt. Putrid", position: Vec(0.5, 0.35) },
+            { name: "Decayedwood", position: Vec(0.5, 0.65) }
+        ]
+    },
 } satisfies Record<string, MapDefinition>;
 
 export type MapName = keyof typeof maps;
