@@ -1870,7 +1870,6 @@ const maps = {
             rock: 20,
             bush: 20,
             regular_crate: 10,
-            grenade_crate: 3,
             flint_crate: 1,
             aegis_crate: 1,
             blueberry_bush: 3,
