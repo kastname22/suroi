@@ -37,6 +37,8 @@ public/img/game/buildings/warehouse
 public/img/game/decals/floor_oil
 public/img/game/decals/vaccine_syringe_residue.svg
 
+public/img/game/loot/vaccine_syringe.svg
+
 public/img/game/obstacles/aegis_crate
 public/img/game/obstacles/aegis_golden_case
 public/img/game/obstacles/airdrop_crate
